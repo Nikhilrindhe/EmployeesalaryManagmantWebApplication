@@ -1,0 +1,16 @@
+.Mainpage
+{
+min-height:90vh;
+width:100%;
+background-image: url(../img/login_back.jpg);
+    background-position:bottom;
+   background-size: cover;
+   background-repeat:no-repeat;
+   background-origin: content-box;
+}
+.navbar {
+        background-color: white; /* Background color */
+}
+.navbar-dark .navbar-nav .nav-link {
+        color: black; /* Text color */
+ }

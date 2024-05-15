@@ -119,6 +119,11 @@ String username = (String) existingSession.getAttribute("user");
 										<li class="w-100"><a href="attendence.jsp"
 									class="nav-link px-0"> <span
 										class="d-none d-sm-inline text-white">Track Attendence</span></a></li>
+										
+										<li class="w-100"><a href="Empsalary.jsp"
+									class="nav-link px-0"> <span
+										class="d-none d-sm-inline text-white">Salary</span></a></li>
+										
 							</ul></li>
 						<a href="#submenu3" data-bs-toggle="collapse"
 							class="nav-link px-0 align-middle"> <i class="fs-4 bi-grid"></i>

@@ -53,6 +53,7 @@ public class AttendenceRepositoryImpl extends DbConfig implements AttendenceRepo
 				
 				 LocalDate currentDate = LocalDate.now();
 					java.sql.Date sqlDate = java.sql.Date.valueOf(currentDate);
+					
 				stmt.setInt(1, dateId);
 				stmt.setDate(2, sqlDate);
 				int value=stmt.executeUpdate();

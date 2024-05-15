@@ -9,6 +9,7 @@ import Employee.admin.model.EmployeeModel;
 public class EmployeeRepositoryImpl extends DbConfig implements EmployeeRepository {
 	List<Object[]> list;
 	List<Object[]> li;
+	List<Object[]> l;
 
 	// ---------------------------logic for get maximum id of employee-----------------------------
 	private int id;
@@ -29,7 +30,7 @@ public class EmployeeRepositoryImpl extends DbConfig implements EmployeeReposito
 		}
 	}
 
-	// ----------------------------------logic for take department id by using dapartment name---------------------------
+// ----------------------------------logic for take department id by using dapartment name---------------------------
 	public int getDepartmentid(String name) {
 		try {
 
@@ -48,7 +49,7 @@ public class EmployeeRepositoryImpl extends DbConfig implements EmployeeReposito
 		}
 	}
 
-	// --------------logic for check employee already present or not----------------------------------
+// --------------logic for check employee already present or not----------------------------------
 	public boolean isEmployeePresent(String email, String contact) {
 		try {
 			stmt = conn.prepareStatement("select *from employee where email=? and contact=?");
@@ -63,7 +64,7 @@ public class EmployeeRepositoryImpl extends DbConfig implements EmployeeReposito
 		}
 	}
 
-	// ----------------here insert employee detail--------------------------------------------------------
+// ----------------here insert employee detail--------------------------------------------------------
 
 	public boolean isAddEmployee(EmployeeModel emodel, String name) {
 
@@ -168,15 +169,16 @@ public class EmployeeRepositoryImpl extends DbConfig implements EmployeeReposito
 	}
 
 //--------------------logic for serching employee using AJAX---------------------------------------------
+	
 	@Override
 	public List<Object[]> getAllSearchEmployee(String searchValue) {
 		try {
-
+			
 			List<Object[]> li = new ArrayList<Object[]>();
 			stmt = conn.prepareStatement(
-					" SELECT e.emp_fname, e.lname, e.email, e.salary, d.dept_name, e.emp_id, e.contact, e.address FROM employee e INNER JOIN empdptjoin eej ON eej.emp_id = e.emp_id INNER JOIN department d ON eej.dept_id = d.dept_id where e.emp_fname like '"
+					" SELECT e.emp_fname, e.lname, e.email, e.salary, d.dept_name, e.emp_id, e.contact, e.address FROM employee e LEFT JOIN empdptjoin eej ON eej.emp_id = e.emp_id LEFT JOIN department d ON eej.dept_id = d.dept_id where e.emp_fname like '%"
 							+ searchValue + "%'");
-
+		
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				Object[] obj = new Object[] { rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4),
@@ -192,4 +194,5 @@ public class EmployeeRepositoryImpl extends DbConfig implements EmployeeReposito
 
 	}
 
+	
 }

@@ -10,5 +10,5 @@ public interface EmployeeService {
 	public boolean isDeleteEmployee(int id);
 	public boolean isUpdateEmp(EmployeeModel emodel);
 	public List<Object[]> getAllSearchEmployee(String searchValue);
-	
+
 }

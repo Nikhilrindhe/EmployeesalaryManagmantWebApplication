@@ -8,7 +8,7 @@
 <title>Employee Form</title>
 <link href="css/addEmployee.css" rel="stylesheet"/>
 
-
+<script type="text/javascript" src="jsFile/loginPageValidation.js"></script>
 </head>
 
 <body>
@@ -20,19 +20,25 @@
         <form name='frm' action='addemployee' method='POST'>
             <div class='form-group'>
                 <label for='name'>Name</label>
-                <input type='text' name='name' placeholder='Enter name' required>
+                <input type='text' name='name' placeholder='Enter name' required onkeyup="nameValid(this.value)">
+                <span id="name"></span>
             </div>
             <div class='form-group'>
                 <label for='surname'>Surname</label>
-                <input type='text' name='surname' placeholder='Enter Surname' required>
+                <input type='text' name='surname' placeholder='Enter Surname' required onkeyup="surnameValid(this.value)">
+                <span id="surname"></span>
             </div>
             <div class='form-group'>
+            
                 <label for='email'>Email</label>
-                <input type='email' name='email' placeholder='Enter email' required>
+                
+                <input type='email' name='email' placeholder='Enter email' required onkeyup="emailValid(this.value)">
+                 <span id="email"></span>
             </div>
             <div class='form-group'>
                 <label for='contact'>Contact</label>
-                <input type='number' name='contact' placeholder='Enter contact' required>
+                <input type='number' name='contact' placeholder='Enter contact' required onkeyup="contactValid(this.value)">
+                <span id="contact"></span>
             </div>
             <div class='form-group'>
                 <label for='join_date'>Join Date</label>
@@ -44,7 +50,8 @@
             </div>
             <div class='form-group'>
                 <label for='salary'>Salary</label>
-                <input type='number' name='salary' placeholder='Enter employee salary' required>
+                <input type='number' name='salary' placeholder='Enter employee salary' required onkeyup="salaryValid(this.value)">
+                <span id="sal"></span>
             </div>
             <h5>Select Department</h5>
             <div class='form-group'>

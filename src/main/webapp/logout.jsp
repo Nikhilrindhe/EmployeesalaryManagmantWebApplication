@@ -12,3 +12,4 @@
     // Redirect to the main page or any other appropriate page after logout
     response.sendRedirect("mainpage.jsp");
 %>
+

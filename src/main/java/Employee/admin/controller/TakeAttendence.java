@@ -25,6 +25,7 @@ public class TakeAttendence extends HttpServlet {
 		if(res==1)
 		{
 			out.println("attendence marked successfully");
+			
 		}
 		else if(res==-1)
 		{

@@ -9,7 +9,6 @@
 <link href="css/mainpage.css" rel="stylesheet">
 <link href="css/login.css" rel="stylesheet">
 <script src='jsFile/loginPageValidation.js'>
-
 </script>
 </head>
 <body>

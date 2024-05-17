@@ -7,6 +7,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
+	h4,h6
+	{
+		text-align:center;
+	}
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,7 +21,7 @@
         #container {
             max-width: 600px;
             margin: 20px auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,7 +51,7 @@
             width: 100%;
             padding: 8px;
             margin-top: 5px;
-            margin-bottom: 10px;
+/*             margin-bottom: 10px; */
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
@@ -112,8 +116,7 @@ input[type='search'],[type='month'],[type='number']{
             }
         }
 
-        var params = 's=' + encodeURIComponent(searchValue) + 
-                     '&m=' + encodeURIComponent(monthValue);
+        var params = 's=' + encodeURIComponent(searchValue) + '&m=' + encodeURIComponent(monthValue);
 
         xhttp.open('GET', "searchbyemail.jsp?" + params, true);
         xhttp.send();
@@ -140,22 +143,23 @@ input[type='search'],[type='month'],[type='number']{
 
 	<div id="container">
 	<div id="contain">       
-	 <h1>Payslip</h1>
+	<h4>MyVentures pvt.ltd</h4>
+        <h6>PAY SLIP</h6>
         <form name="pay" id="pay">
             <table>
                  <tr>
                     <td>Name</td>
-                    <td><%="abc" %></td>
+                    <td><input type='text'></td>
                     
                     <td>Employee Code</td>
-                    <td><%= "10"%></td>
+                   <td><input type='text'></td>
                 </tr>
                  <tr>
                     <td>Basic</td>
-                    <td><%="1000" %></td>
+                    <td><input type='text'></td>
                     
                     <td>Department</td>
-                    <td><%= "it"%></td>
+                  <td><input type='text'></td>
                 </tr>
                 <tr>
                     <td>Dearness Allowance</td>
@@ -171,11 +175,9 @@ input[type='search'],[type='month'],[type='number']{
                 </tr>
                 <tr>
                     <td>Gross Salary</td>
-                    <td colspan="3"><input type="text" id="empGS" disabled/></td>
-                </tr>
-                <tr>
+                    <td><input type="text" id="empGS" disabled/></td>
                     <td>Aggregate Deduction</td>
-                    <td colspan="3"><input type="text" id="empAD" disabled/></td>
+                    <td><input type="text" id="empAD" disabled/></td>
                 </tr>
                 <tr>
                     <td>Net Salary</td>

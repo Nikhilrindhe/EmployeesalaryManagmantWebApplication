@@ -1,6 +1,8 @@
 package Employee.admin.service;
 
 import java.util.List;
+
+import Employee.admin.model.EmployeSalaryModel;
 import Employee.admin.repository.*;
 
 public class SalaryServiceImpl implements SalaryService{
@@ -8,7 +10,7 @@ public class SalaryServiceImpl implements SalaryService{
 	
 
 	@Override
-	public List<Object[]> empSerchByEmail(String searchValue,String monthValue) {
+	public List<EmployeSalaryModel> empSerchByEmail(String searchValue,String monthValue) {
 		return srepo.empSerchByEmail(searchValue,monthValue);
 	}
 	

@@ -9,7 +9,7 @@ public class UserRepositoryImpl extends DbConfig implements UserRepository{
 	public int isVerifyEmployee(String user, String pass) {
 		try
 		{
-			stmt=conn.prepareStatement("select *from employee where emp_fname=? and contact=?");
+			stmt=conn.prepareStatement("select *from employee where emp_fname=? and email=?");
 			stmt.setString(1, user);
 			stmt.setString(2, pass);
 			rs=stmt.executeQuery();

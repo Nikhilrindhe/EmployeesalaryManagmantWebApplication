@@ -6,7 +6,7 @@ import Employee.admin.DBConfig.DbConfig;
 
 public class AttendenceRepositoryImpl extends DbConfig implements AttendenceRepository{
 	
-//------------------here we find last date id from date table using today date and employee id----------------------------------------------------------------
+//------------here we find last date id from date table using today date and employee id-------------------
 	private int maxdid;
 	public int getDateId(int eid,String date)
 	{

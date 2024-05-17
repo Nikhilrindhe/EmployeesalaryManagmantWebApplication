@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@page
 	import="Employee.admin.service.*,java.util.*,Employee.admin.model.*,java.time.LocalDate"%>
 <!DOCTYPE html>
@@ -39,6 +40,11 @@ label a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: bold;
+}
+.marked{
+color:blue;
+font-weight: bold;
+    font-style: italic;
 }
 </style>
 <script type="text/javascript">
@@ -87,7 +93,7 @@ window.onload = function() {
 	</div>
 
 	<div class='container' id="contain"
-		style="display: flex; justify-content: center; align-items: center; margin-top: 10px;width: 70%;">
+		style="display: flex; justify-content: center; align-items: center; margin-top: 10px;width: 80%;">
 		<table class="table table-info">
 			<thead>
 				<tr>
@@ -130,19 +136,22 @@ window.onload = function() {
 			<input type="radio"  name="radioGroup" id="radioOption1<%=count%>" value="option1" name="status"
 						for="option1<%=count%>" checked">
 		<a href="takeattendence?empid=<%=obj[5]%>&date=<%=LocalDate.now()%>&status=2" style="color: #fff; text-decoration: none;">Absent</a></label>
-<!-- 					<a -->
-<%-- 						href="takeattendence?empid=<%=obj[5]%>&date=<%=LocalDate.now()%>&status=2" --%>
-<!-- 						style="color: #fff; text-decoration: none;"><input type="radio" name="radioGroup" -->
-<%-- 						id="radioOption2<%=count%>" value="option2" name="status" --%>
-<%-- 						for="option1<%=count%>">Absent </a></label> --%>
+
 						</td>
+						
 				</tr>
 				<%
 				}
 				%>
 			</tbody>
+			
 		</table>
+		
+	<span class='marked'>${msg}
+		</span>
+		
 	</div>
+	
 	<script>
 		window.onload = function() {
 			// Add click event listener to each radio button
@@ -169,6 +178,6 @@ window.onload = function() {
 		};
 	</script>
 
-
+	
 </body>
 </html>

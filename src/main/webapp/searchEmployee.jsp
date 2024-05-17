@@ -32,12 +32,7 @@ List<Object[]> list;
   <%
   EmployeeService eservice=new EmployeeServiceImpl();
   list=eservice.getAllSearchEmployee(searchValue);
-//   if(list!=null){
-// 	  System.out.println("Data is present");
-//   }
-//   else{
-// 	  System.out.println("Data is not present");
-//   }
+
 	int count=0;
 	for(Object obj[]:list)
 	{

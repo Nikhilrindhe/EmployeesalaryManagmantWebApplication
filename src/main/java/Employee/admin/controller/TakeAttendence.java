@@ -1,6 +1,8 @@
 package Employee.admin.controller;
 
 import java.io.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,12 +26,16 @@ public class TakeAttendence extends HttpServlet {
 		int res=eservice.isTakeAttendence(eid, date, status);
 		if(res==1)
 		{
-			out.println("attendence marked successfully");
+		request.setAttribute("msg","Mark Successfully");
+		RequestDispatcher r=request.getRequestDispatcher("attendence.jsp");
+		r.include(request, response);
 			
 		}
 		else if(res==-1)
 		{
-			out.println("Attendence already marked...!");
+			request.setAttribute("msg","Allready Marked");
+			RequestDispatcher r=request.getRequestDispatcher("attendence.jsp");
+			r.include(request, response);
 		}
 		else {
 			out.println("some problem is there");

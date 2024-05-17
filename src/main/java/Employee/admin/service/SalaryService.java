@@ -2,8 +2,10 @@ package Employee.admin.service;
 
 import java.util.List;
 
+import Employee.admin.model.EmployeSalaryModel;
+
 public interface SalaryService {
-	public List<Object[]> empSerchByEmail(String searchValue,String monthValue);
+	public List<EmployeSalaryModel> empSerchByEmail(String searchValue,String monthValue);
 	
 
 }

@@ -125,18 +125,7 @@ String username = (String) existingSession.getAttribute("user");
 										class="d-none d-sm-inline text-white">Salary</span></a></li>
 										
 							</ul></li>
-						<a href="#submenu3" data-bs-toggle="collapse"
-							class="nav-link px-0 align-middle"> <i class="fs-4 bi-grid"></i>
-							<span class="ms-1 d-none d-sm-inline texr-white">profile</span>
-						</a>
-						<ul class="collapse nav flex-column ms-1" id="submenu3"
-							data-bs-parent="#menu">
-							<li class="w-100"><a href="#" class="nav-link px-0"> <span
-									class="d-none d-sm-inline text-white">update profile</span></a></li>
-							<li class="w-100"><a href="#" class="nav-link px-0"> <span
-									class="d-none d-sm-inline text-white">View profile</span></a></li>
-						</ul>
-						</li>
+						
 
 						<!--                     <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle"> -->
 

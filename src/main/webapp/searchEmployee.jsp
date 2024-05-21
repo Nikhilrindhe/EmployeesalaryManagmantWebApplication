@@ -14,7 +14,7 @@ String searchValue=request.getParameter("s");
 
 List<Object[]> list;
 %>
-<table class="table"style="color:white;">
+<table class="table border-primary"style="color:black;">
   <thead>
     <tr>
       <th scope="col">Sr.no</th>

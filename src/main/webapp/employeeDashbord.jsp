@@ -98,6 +98,7 @@
 								<li class="w-100"><a href="viewProfile.jsp"
 									class="nav-link px-0"> <span
 										class="d-none d-sm-inline text-white">View profile</span></a></li>
+									
 							</ul></li>
 
 					</ul>

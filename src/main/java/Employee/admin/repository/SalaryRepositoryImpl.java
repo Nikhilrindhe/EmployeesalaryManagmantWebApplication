@@ -93,7 +93,7 @@ public class SalaryRepositoryImpl extends DbConfig implements SalaryRepository{
 			String substring[]=monthValue.split("-");
 			int year=Integer.parseInt(substring[0]);
 			int month=Integer.parseInt(substring[1]);
-			System.out.println("year is"+year+"\tMonth is"+month);
+//			System.out.println("year is"+year+"\tMonth is"+month);
 			int presentcount=this.getMonthAttendense(eid,year,month);
 
 			int dayss=0;
@@ -120,7 +120,7 @@ public class SalaryRepositoryImpl extends DbConfig implements SalaryRepository{
 			pf=presentdaysal*0.12;     		//personal fund
 			
 			
-			System.out.println("before da  & pf is"+da+"\t"+pf);
+//			System.out.println("before da  & pf is"+da+"\t"+pf);
 			hra=presentdaysal*0.5;			//house rent
 			gs=presentdaysal+da+hra;
 			pt=0;

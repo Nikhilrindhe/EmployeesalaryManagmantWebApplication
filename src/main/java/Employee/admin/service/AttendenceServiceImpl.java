@@ -11,5 +11,12 @@ public class AttendenceServiceImpl implements AttendenceService{
 		return arepo.isVerifyAttendence(id, date, status)?-1:arepo.isTakeAttendence(id, date, status)?1:0;
 		
 	}
+	@Override
+	public int getMonthPresentAttendense(int eid, int mid) {
+		return arepo.getMonthPresentAttendense(eid,mid);
+	}
 
+	public int getMonthAbsentAttendense(int eid, int mid) {
+		return arepo.getMonthAbsentAttendense(eid,mid);
+	}
 }

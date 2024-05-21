@@ -12,20 +12,31 @@
 		text-align:center;
 	}
 </style>
+<script>
+function downloadReceipt()
+{
+	var printContents=document.getElementById("print").innerHTML;
+	
+	var originalContents=document.body.innerHTML;
+	document.body.innerHTML=printContents;
+	window.print();
+	document.body.innerHTML=originalContents;
+}
+</script>
 </head>
 <body>
 
 <%
 String searchValue = request.getParameter("s");
 String monthValue = request.getParameter("m");
-System.out.println("Search value is: " + searchValue);
-System.out.println("Month is: " + monthValue);
+// System.out.println("Search value is: " + searchValue);
+// System.out.println("Month is: " + monthValue);
 
 SalaryService sservice=new SalaryServiceImpl();
 List<EmployeSalaryModel> list=sservice.empSerchByEmail(searchValue,monthValue);
 	%>
 	
-	
+	<div id="print">
 
         <h4>MyVentures pvt.ltd</h4>
         <h6>PAY SLIP</h6>
@@ -82,14 +93,14 @@ List<EmployeSalaryModel> list=sservice.empSerchByEmail(searchValue,monthValue);
 			%>	
    
                     <td colspan="4" align="center">
-                        <input type="button" id="empCompute" value="Compute Pay" onclick="calcPay();" >
+                        <input type="button"  value="Download" onclick="downloadReceipt();" >
                     </td>
                 </tr>
                
             </table>
         </form>
   
-
+</div>
 
 
 </body>

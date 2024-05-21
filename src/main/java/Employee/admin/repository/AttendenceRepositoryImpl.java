@@ -149,4 +149,64 @@ public class AttendenceRepositoryImpl extends DbConfig implements AttendenceRepo
 			return false;
 		}	
 	}
+
+//=======================here calculate present days of employee using eid and month==================================================================================
+private int presentcount=0;
+
+public int getMonthPresentAttendense(int eid,int month)
+{
+	try {
+			stmt=conn.prepareStatement("SELECT COUNT(d.did) FROM employee e INNER JOIN empattendatejoin empj ON empj.emp_id = e.emp_id INNER JOIN date d ON d.did = empj.did WHERE e.emp_id = ? AND YEAR(D.DATE)=2023 AND MONTH(d.date) = ? AND empj.atid=1 GROUP BY e.emp_fname");
+			stmt.setInt(1, eid);
+			stmt.setInt(2,month);
+			rs=stmt.executeQuery();
+			if(rs.next())
+			{
+				 presentcount=rs.getInt(1);		
+				
+			}
+		else
+		{
+			return 0;
+		}
+	}
+		
+	catch(Exception ex)
+	{
+		System.out.println("Error is-->"+ex);
+		return 0;
+	}
+	return presentcount;
 }
+
+//=======================here calculate Absent days of employee using eid and month==================================================================================
+
+
+public int getMonthAbsentAttendense(int eid,int month)
+{
+	try {
+			stmt=conn.prepareStatement("SELECT COUNT(d.did) FROM employee e INNER JOIN empattendatejoin empj ON empj.emp_id = e.emp_id INNER JOIN date d ON d.did = empj.did WHERE e.emp_id = ? AND YEAR(D.DATE)=2023 AND MONTH(d.date) = ? AND empj.atid=2 GROUP BY e.emp_fname");
+			stmt.setInt(1, eid);
+			stmt.setInt(2,month);
+			rs=stmt.executeQuery();
+			if(rs.next())
+			{
+				 presentcount=rs.getInt(1);		
+				
+			}
+		else
+		{
+			return 0;
+		}
+	}
+		
+	catch(Exception ex)
+	{
+		System.out.println("Error is-->"+ex);
+		return 0;
+	}
+	return presentcount;
+}
+//==========================================================================================
+}
+

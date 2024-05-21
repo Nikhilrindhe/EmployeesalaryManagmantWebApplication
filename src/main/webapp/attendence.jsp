@@ -66,6 +66,7 @@ window.onload = function() {
 
 	function loadDoc() {
 		var searchValue = document.getElementById("ser").value;
+		
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -74,8 +75,7 @@ window.onload = function() {
 				document.getElementById("contain").innerHTML = "File Not Found";
 			}
 		}
-		xhttp.open('POST', "searchEmployeeForAttendance.jsp?s=" + searchValue,
-				true);
+		xhttp.open('POST', "searchEmployeeForAttendence.jsp?s=" + searchValue,true);
 		xhttp.send();
 	}
 </script>
@@ -120,10 +120,7 @@ window.onload = function() {
 					<td><%=LocalDate.now()%></td>
 					<td>
 					
-<%-- 						<a href="takeattendence?empid=<%=obj[5]%>&date=<%=LocalDate.now()%>&status=1" style="color: #fff; text-decoration: none;">
-					<input type="radio" name="radioGroup" --%>
-<%-- 						id="radioOption1<%=count%>" value="option1" name="status" --%>
-<%-- 						for="option1<%=count%>"> Present</a> --%>
+
 		<label class="btn btn-primary" for="option1<%=count%>">				
 <input type="radio"  name="radioGroup" id="radioOption1<%=count%>" value="option1" name="status"
 						for="option1<%=count%>" checked">

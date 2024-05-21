@@ -118,7 +118,7 @@ String username = (String) existingSession.getAttribute("user");
 										class="d-none d-sm-inline text-white">View Employee</span></a></li>
 										<li class="w-100"><a href="attendence.jsp"
 									class="nav-link px-0"> <span
-										class="d-none d-sm-inline text-white">Track Attendence</span></a></li>
+										class="d-none d-sm-inline text-white">Take Attendence</span></a></li>
 										
 										<li class="w-100"><a href="Empsalary.jsp"
 									class="nav-link px-0"> <span
